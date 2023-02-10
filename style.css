@@ -1,0 +1,264 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap);
+* {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #414141;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f3f4f6;
+}
+
+.app {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+    transform: translate(-50%, -50%);
+}
+
+.counter,
+.wrapChoice,
+body {
+    display: flex;
+}
+.container,
+.status {
+    border-radius: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+}
+
+.header__left h1 {
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #EEEEEE;
+    padding: 12px 20px;
+    border-radius: 30px 0 30px 0;
+}
+
+.header__right {
+    font-size: 18px;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.header__menus {
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    margin-top: 30px;
+}
+
+.welcomeText {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.welcomeText span:first-child {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-top: 100px;
+}
+
+.welcomeText span:last-child { 
+    font-weight: 300;
+    margin-top: 40px;
+}
+
+.status {
+    position: absolute;
+}
+
+.counter {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    z-index: -99;
+}
+.game {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.wrapChoice {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.choice1,
+.choice2,
+.choice3,
+.choice0 {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 500;
+    text-align: center;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.choice1:hover,
+.choice2:hover,
+.choice3:hover,
+.choice0:hover {
+    background-color: #e1e1e1;
+}
+
+.wrap__question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameQuestion {
+    text-align: center;
+    font-size: 90px;
+    font-weight: 600;
+    margin: 40px 0;
+}
+
+.nextQuiz, .incorrectQuiz, .timeout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.nextQuiz span {
+    font-size: 6rem;
+    font-weight: 600;
+    margin-bottom: 100px;
+}
+
+.incorrectText {
+    color: #E56E6E;
+    font-size: 6rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.incorrectScore {
+    font-size: 18px;
+    color: #414141;
+    font-weight: 300;
+    margin-bottom: 80px;
+}
+
+.playButton,
+.playAgainButton,
+.stopButton,
+.nextButton {
+    padding: 7px 18px;
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.playButton,
+.playAgainButton,
+.nextButton {
+    border: 0;
+    border-radius: 10px;
+    background-color: #91C778;
+}
+
+.playButton:hover, .playAgainButton:hover, .nextButton:hover {
+    background-color: #81b46a;
+}
+
+.stopButton {
+    border: 0;
+    border-radius: 10px;
+    background-color: #E56E6E;
+    margin-left: 10px;
+}
+
+.stopButton:hover {
+    background-color: #d15f5f;
+}
+
+.nextButton {
+    z-index: 3;
+}
+
+.wrap__timer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 11%;
+    top: 0px;
+}
+
+.wrap__timer span {
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    position: absolute;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #414141;
+}

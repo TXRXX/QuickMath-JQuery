@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <title>Quick Math</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            <div class="header">
+                <div class="header__left">
+                    <h1>QUICK MATH</h1>
+                    <div class="header__menus">
+                        <button class="playButton">START</button>
+                        <button class="stopButton">STOP</button>
+                    </div>
+                </div>
+                <div class="header__right">
+                    <span class="score">YOUR SCORE : 0</span>
+                </div>
+            </div>
+            <div class="container">
+                
+                <div class="welcomeText">
+                    <span
+                        >Welcome to<br />
+                        Quick Math Game</span
+                    >
+                    <span>JQuery Framework by TXRXX</span>
+                </div>
+                <div class="counter">
+                    <h1 class="counterText"></h1>
+                </div>
+                <div class="game">
+                    <div class="wrap__question">
+                        <div class="wrap__timer">
+                            <span class="timer"></span>
+                        </div>
+                        <span class="gameQuestion"></span>
+                    </div>
+                    <div class="wrapChoice">
+                        <span class="choice0"></span>
+                        <span class="choice1"></span>
+                        <span class="choice2"></span>
+                        <span class="choice3"></span>
+                    </div>
+                </div>
+                <div class="nextQuiz">
+                    <span>CORRECT !</span>
+                    <button class="nextButton">NEXT</button>
+                </div>
+                <div class="incorrectQuiz">
+                    <span class="incorrectText">INCORRECT !</span>
+                    <span class="incorrectScore">TOTAL SCORE : </span>
+                    <button class="playAgainButton">PLAY AGAIN</button>
+                </div>
+                <div class="timeout">
+                    <span class="incorrectText">TIMEOUT !</span>
+                    <span class="incorrectScore">TOTAL SCORE : </span>
+                    <button class="playAgainButton">PLAY AGAIN</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+    >
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFA501" />
+                <stop offset="100%" stop-color="#FFD383" />
+            </linearGradient>
+        </defs>
+    </svg>
+</html>
