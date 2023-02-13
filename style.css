@@ -23,7 +23,7 @@ body {
     left: 50%;
     top: 50%;
     border-radius: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transform: translate(-50%, -50%);
 }
 
@@ -51,7 +51,7 @@ body {
 .header__left h1 {
     font-size: 24px;
     font-weight: 600;
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     padding: 12px 20px;
     border-radius: 30px 0 30px 0;
 }
@@ -92,7 +92,7 @@ body {
     margin-top: 100px;
 }
 
-.welcomeText span:last-child { 
+.welcomeText span:last-child {
     font-weight: 300;
     margin-top: 40px;
 }
@@ -142,8 +142,8 @@ body {
     margin-right: 20px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #F6F6F6;
-    transition: .3s;
+    background-color: #f6f6f6;
+    transition: 0.3s;
     cursor: pointer;
 }
 
@@ -168,7 +168,9 @@ body {
     margin: 40px 0;
 }
 
-.nextQuiz, .incorrectQuiz, .timeout {
+.nextQuiz,
+.incorrectQuiz,
+.timeout {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,7 +186,7 @@ body {
 }
 
 .incorrectText {
-    color: #E56E6E;
+    color: #e56e6e;
     font-size: 6rem;
     font-weight: 600;
     margin-bottom: 40px;
@@ -205,7 +207,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     color: white;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
 }
 
@@ -214,17 +216,19 @@ body {
 .nextButton {
     border: 0;
     border-radius: 10px;
-    background-color: #91C778;
+    background-color: #91c778;
 }
 
-.playButton:hover, .playAgainButton:hover, .nextButton:hover {
+.playButton:hover,
+.playAgainButton:hover,
+.nextButton:hover {
     background-color: #81b46a;
 }
 
 .stopButton {
     border: 0;
     border-radius: 10px;
-    background-color: #E56E6E;
+    background-color: #e56e6e;
     margin-left: 10px;
 }
 
@@ -261,4 +265,43 @@ body {
     border-radius: 10px;
     margin-top: 20px;
     background-color: #414141;
+}
+
+@media screen and (max-width: 400px) {
+    
+}
+
+@media screen and (max-width: 900px) {
+    .app {
+        width: 90%;
+    }
+    .welcomeText span:first-child {
+        font-size: 20px;
+    }
+    .header__left h1 {
+        display: none;
+    }
+    .score {
+        font-size: 12px;
+    }
+    .header__menus {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 5px;
+    }
+    .stopButton {
+        margin: 0;
+        margin-top: 10px;
+    }
+    .gameQuestion, .nextQuiz span, .incorrectText {
+        font-size: 30px;
+    }
+    .choice0, .choice1, .choice2, .choice3 {
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+        margin: 0px 10px;
+    }
 }
