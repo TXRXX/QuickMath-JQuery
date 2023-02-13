@@ -4,6 +4,16 @@ $(function () {
     let time = 10000;
     let timerStage;
 
+    // const num = document.querySelector(".number");
+    // const numVal = time/1000;
+    // let counter = 0;
+    // setInterval(() => {
+    //     if (counter !== numVal) {
+    //         counter++;
+    //         num.innerHTML = `${counter}%`;
+    //     }
+    // }, 80);
+
     $(".playAgainButton").hide();
     $(".stopButton").hide();
     $(".nextQuiz").hide();
@@ -12,10 +22,12 @@ $(function () {
     $(".game").hide();
 
     $(".playButton").click(function () {
+        playClickAudio();
         startGame();
     });
 
     $(".stopButton").click(function () {
+        playClickAudio();
         score = 0;
         refreshScore();
         $(".timeout").hide();
@@ -55,6 +67,7 @@ $(function () {
                 clearInterval(timer);
                 $(".counterText").fadeOut("fast");
             }
+            playBeepAudio();
         }, 1000);
     }
 
@@ -63,6 +76,7 @@ $(function () {
         $(".nextQuiz").show();
         isGenerated = false;
         $(".nextButton").click(function () {
+            playClickAudio();
             generateQuiz();
         });
     }
@@ -74,6 +88,7 @@ $(function () {
         $(".incorrectScore").text("TOTAL SCORE : " + score);
         isGenerated = false;
         $(".playAgainButton").click(function () {
+            playClickAudio();
             score = 0;
             refreshScore();
             startGame();
@@ -103,7 +118,7 @@ $(function () {
         if (!isGenerated) {
             clearInterval(timerStage);
             time = 10000;
-            $(".timer").text(time / 1000 - 1);
+            $(".timer").text(time / 1000);
             $(".nextQuiz").hide();
             $(".game").show();
             isGenerated = true;
@@ -126,6 +141,7 @@ $(function () {
                 $(`.choice${[i]}`)
                     .off("click")
                     .click(function () {
+                        playClickAudio();
                         checkAnswer(answer[i], correctAnswer);
                         if (answer[i] === correctAnswer) {
                             clearInterval(timerStage);
@@ -152,10 +168,12 @@ $(function () {
     function checkAnswer(i, correctAnswer) {
         if (i === correctAnswer) {
             score += 1;
+            playSuccessAudio();
             clearInterval(timerStage);
             refreshScore();
             nextQuiz();
         } else {
+            playWrongAudio();
             incorrectQuiz();
         }
     }
@@ -172,5 +190,25 @@ $(function () {
             ];
         }
         return array;
+    }
+
+    function playClickAudio() {
+        let audio = new Audio("./assets/click.mp3");
+        audio.play();
+    }
+
+    function playBeepAudio() {
+        let audio = new Audio("./assets/beep.mp3");
+        audio.play();
+    }
+
+    function playSuccessAudio() {
+        let audio = new Audio("./assets/success.mp3");
+        audio.play();
+    }
+
+    function playWrongAudio() {
+        let audio = new Audio("./assets/wrong.mp3");
+        audio.play();
     }
 });

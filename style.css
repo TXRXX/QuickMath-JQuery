@@ -247,24 +247,35 @@ body {
     justify-content: center;
     left: 11%;
     top: 0px;
+    width: 80px;
+    height: 80px;
 }
 
-.wrap__timer span {
-    color: white;
-    font-size: 22px;
-    font-weight: 500;
+.wrap__timer::after, .timer {
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+	stroke-dasharray: 188.4955592154;
+	stroke-dashoffset: 188.4955592154;
+	transform: rotate(-90deg);
+	animation: bar-fill 10s linear forwards;
+}
+
+@keyframes bar-fill {
+	100% {
+		stroke-dashoffset: 0;
+	}
 }
 
 .timer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    margin-top: 20px;
-    background-color: #414141;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    color: #414141;
 }
 
 @media screen and (max-width: 400px) {
