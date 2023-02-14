@@ -1,18 +1,8 @@
 $(function () {
     let score = 0;
     let isGenerated = false;
-    let time = 10000;
+    let time = 5000;
     let timerStage;
-
-    // const num = document.querySelector(".number");
-    // const numVal = time/1000;
-    // let counter = 0;
-    // setInterval(() => {
-    //     if (counter !== numVal) {
-    //         counter++;
-    //         num.innerHTML = `${counter}%`;
-    //     }
-    // }, 80);
 
     $(".playAgainButton").hide();
     $(".stopButton").hide();
@@ -75,8 +65,8 @@ $(function () {
         $(".game").hide();
         $(".nextQuiz").show();
         isGenerated = false;
+        playClickAudio();
         $(".nextButton").click(function () {
-            playClickAudio();
             generateQuiz();
         });
     }
@@ -117,7 +107,8 @@ $(function () {
     function generateQuiz() {
         if (!isGenerated) {
             clearInterval(timerStage);
-            time = 10000;
+            time = 5000;
+            playBeepAudio()
             $(".timer").text(time / 1000);
             $(".nextQuiz").hide();
             $(".game").show();

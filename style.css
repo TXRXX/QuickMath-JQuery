@@ -262,7 +262,7 @@ body {
 	stroke-dasharray: 188.4955592154;
 	stroke-dashoffset: 188.4955592154;
 	transform: rotate(-90deg);
-	animation: bar-fill 10s linear forwards;
+	animation: bar-fill 5s linear forwards;
 }
 
 @keyframes bar-fill {
