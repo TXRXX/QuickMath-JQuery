@@ -72,6 +72,7 @@ $(function () {
     }
 
     function incorrectQuiz() {
+        playWrongAudio();
         $(".game").hide();
         $(".incorrectQuiz").show();
         $(".playAgainButton").show();
@@ -86,6 +87,7 @@ $(function () {
     }
 
     function timeOut() {
+        playWrongAudio();
         $(".game").hide();
         $(".incorrectQuiz").hide();
         $(".timeout").show();
@@ -108,7 +110,7 @@ $(function () {
         if (!isGenerated) {
             clearInterval(timerStage);
             time = 5000;
-            playBeepAudio()
+            playBeepAudio();
             $(".timer").text(time / 1000);
             $(".nextQuiz").hide();
             $(".game").show();
@@ -200,6 +202,7 @@ $(function () {
 
     function playWrongAudio() {
         let audio = new Audio("./assets/wrong.mp3");
+        audio.volume = 0.1;
         audio.play();
     }
 });
